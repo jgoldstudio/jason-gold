@@ -7,6 +7,7 @@ export const archiveItems: ArchiveItem[] = [
     year: 2026,
     summary: "A quiet daily log tracking how silence changes writing rhythm.",
     tags: ["writing", "practice"],
+    featured: true,
     detail: {
       intro: "I paused new inputs for a month and tracked how ideas formed without constant noise.",
       sections: [
@@ -27,6 +28,7 @@ export const archiveItems: ArchiveItem[] = [
     year: 2026,
     summary: "An experiment in low-friction reading sessions with timed notes.",
     tags: ["tools", "learning"],
+    featured: true,
     href: "https://example.com/ambient-reading-room"
   },
   {
@@ -35,6 +37,7 @@ export const archiveItems: ArchiveItem[] = [
     year: 2026,
     summary: "A living page of unresolved questions grouped by horizon.",
     tags: ["notes", "systems"],
+    featured: true,
     detail: {
       intro: "This index exists to keep uncertainty visible instead of pretending everything has a tidy conclusion.",
       sections: [
@@ -63,6 +66,7 @@ export const archiveItems: ArchiveItem[] = [
     year: 2025,
     summary: "UI patterns that reward attention instead of extracting it.",
     tags: ["design", "interaction"],
+    featured: true,
     detail: {
       intro: "I cataloged interfaces that intentionally avoid urgency while still feeling alive.",
       sections: [
@@ -98,6 +102,7 @@ export const archiveItems: ArchiveItem[] = [
     year: 2025,
     summary: "A visual archive of mistakes with notes on what each one taught.",
     tags: ["engineering", "learning"],
+    featured: true,
     detail: {
       intro: "Instead of hiding failures in commit history, this project frames errors as reusable pattern language.",
       sections: [
@@ -148,6 +153,7 @@ export const archiveItems: ArchiveItem[] = [
     year: 2024,
     summary: "A ledger for tracking where focus was spent versus intended.",
     tags: ["attention", "systems"],
+    featured: true,
     detail: {
       intro: "The ledger reframes focus as a finite budget that can be audited, not a vague feeling.",
       sections: [
@@ -203,3 +209,5 @@ export const archiveItems: ArchiveItem[] = [
 ];
 
 export const archiveItemsSorted = [...archiveItems].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+
+export const featuredArchiveItems = archiveItemsSorted.filter((item) => item.featured).slice(0, 6);

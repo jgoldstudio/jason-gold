@@ -3,8 +3,8 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "jason.gold",
-  description: "A minimalist, contemplative journal and archive.",
+  title: "JASON.GOLD — CV as a living log",
+  description: "Curated work, journal entries, and an evolving CV.",
   metadataBase: new URL("https://jason.gold")
 };
 
@@ -22,6 +22,9 @@ export default function RootLayout({
               jason.gold
             </Link>
             <nav aria-label="Primary" className="flex items-center gap-6 text-sm text-quiet">
+              <Link href="/about" className="transition-colors hover:text-ink">
+                About
+              </Link>
               <Link href="/journal" className="transition-colors hover:text-ink">
                 Journal
               </Link>
@@ -34,7 +37,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
 
           <footer className="mt-24 border-t border-line pt-6 text-xs text-quiet">
-            <p>Observations, experiments, and unfinished thoughts.</p>
+            <p>JASON.GOLD — CV as a living log.</p>
           </footer>
         </div>
       </body>

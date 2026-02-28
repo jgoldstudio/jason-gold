@@ -5,7 +5,7 @@ import { getSubstackBaseUrl, getSubstackPosts } from "@/lib/substack";
 
 export const metadata: Metadata = {
   title: "Journal | jason.gold",
-  description: "Date-first log of writing published on Substack."
+  description: "Full Substack feed rendered as a date-first log."
 };
 
 export default async function JournalPage() {
@@ -16,9 +16,9 @@ export default async function JournalPage() {
     <section className="space-y-10">
       <header className="max-w-3xl space-y-4">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-quiet">Journal</p>
-        <h1 className="text-4xl leading-tight text-ink sm:text-5xl">A date-first log of notes and essays.</h1>
+        <h1 className="text-4xl leading-tight text-ink sm:text-5xl">Full feed, date first.</h1>
         <p className="max-w-2xl text-sm leading-relaxed text-quiet">
-          Entries are mirrored from Substack and rendered as a chronological ledger.
+          Every Substack entry appears here as a chronological log with server-side caching.
         </p>
         <Link
           href={substackUrl}

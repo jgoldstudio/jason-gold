@@ -12,6 +12,7 @@ export type ArchiveItem = {
   year: number;
   summary: string;
   tags: string[];
+  featured?: boolean;
   href?: string;
   detail?: {
     intro: string;
