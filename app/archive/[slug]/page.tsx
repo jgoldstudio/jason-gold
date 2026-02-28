@@ -4,17 +4,17 @@ import { notFound } from "next/navigation";
 import { archiveItems } from "@/content/archive";
 
 type ArchiveDetailPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 function findArchiveItem(slug: string) {
   return archiveItems.find((item) => item.slug === slug);
 }
 
-export function generateMetadata({ params }: ArchiveDetailPageProps): Metadata {
-  const { slug } = params;
+export async function generateMetadata({ params }: ArchiveDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
   const item = findArchiveItem(slug);
 
   if (!item) {
@@ -33,8 +33,8 @@ export function generateStaticParams() {
   return archiveItems.filter((item) => Boolean(item.detail)).map((item) => ({ slug: item.slug }));
 }
 
-export default function ArchiveDetailPage({ params }: ArchiveDetailPageProps) {
-  const { slug } = params;
+export default async function ArchiveDetailPage({ params }: ArchiveDetailPageProps) {
+  const { slug } = await params;
   const item = findArchiveItem(slug);
 
   if (!item || !item.detail) {

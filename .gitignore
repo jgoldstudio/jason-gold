@@ -8,3 +8,4 @@ dist
 
 # Local setup markers (never commit)
 .home-codex-setup-complete
+.vercel
